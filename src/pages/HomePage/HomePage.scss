@@ -2,3 +2,13 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.home {
+  &__title {
+    font-weight: 300;
+    color: $telect-light-teal;
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 2rem 0 0 0;
+  }
+}
