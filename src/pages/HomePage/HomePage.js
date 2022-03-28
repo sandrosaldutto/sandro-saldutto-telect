@@ -1,31 +1,22 @@
 import "./HomePage.scss";
-import NewRelease from "../../components/NewRelease/NewRelease"
-import { Component } from "react";
-import getData from "../../utils/api";
+import React from "react";
+import useFetch from "../../hooks/UseFetch";
+import SearchedShow from "../../components/SearchedShow/SearchedShow"
 
-class HomePage extends Component {
-  
-  state = {
-    newRelease: [],
-  }
-
-  componentDidMount() {
-    getData
-      .getNewReleases()
-      .then((res) => {
-        console.log(res)
-        this.setState({
-            newReleases: res.data
-        })
-      })
-  }
-  
-  render() {
+function HomePage() {
+  const { data, setData } = useFetch();
   return (
-    <section className="home"> 
-    </section>
+    <main>
+      <input
+        type="text"
+        placeholder="Search your favourite show"
+        value={data.slug}
+        onChange={(e) => setData({ ...data, slug: e.target.value })}
+      />
+      <br />
+      {data.results.length > 0 ? <SearchedShow show={data.results[0]} /> : null}
+    </main>
   );
-}
 }
 
 export default HomePage;
