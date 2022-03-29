@@ -11,7 +11,7 @@ function HomePage() {
   
   const isEmpty = !tvShows || tvShows.length === 0;
 
-  const changeHandler = (e) => {
+  const inputHandler = (e) => {
     e.preventDefault();
 
     if(e.target.value === "") {
@@ -51,10 +51,11 @@ function HomePage() {
     <main>
       <input
         value={searchQuery} 
-        onChange={changeHandler}
+        onChange={inputHandler}
         type="search"
         placeholder="Search for Show"
       ></input>
+      {!isLoading && isEmpty && <p>No Tv Shows found </p>}
       {!isLoading && !isEmpty && (
             <>
               {tvShows.map(({ show }) => (
