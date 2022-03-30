@@ -1,0 +1,47 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.tvshow {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $grey-black-transparent;
+  border-radius: 5px;
+
+  &:hover {
+    border: 1px solid $telect-light-teal;
+    background-color: $row-highlight;
+  }
+
+  &__image {
+    height: 10rem;
+    border-radius: 5px;
+    box-shadow: 2px 0px 10px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  &__info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: $white;
+  }
+
+  &__rating {
+    font-size: 0.85rem;
+    margin: 1rem 0;
+    color: $grey-black;
+  }
+}

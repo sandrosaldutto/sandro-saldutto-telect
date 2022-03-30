@@ -53,14 +53,15 @@ function HomePage() {
   useDebounce(searchQuery, 500, searchTvShow);
 
   return (
-    <main>
+    <main className="home">
       <input
         value={searchQuery} 
         onChange={inputHandler}
         type="search"
         placeholder="Search for Show"
+        className="home__searchbar"
       ></input>
-      {!isLoading && isEmpty && <p>No Tv Shows found </p>}
+      {!isLoading && isEmpty && <p className="home__shows-found">No Tv Shows found </p>}
       {!isLoading && !isEmpty && (
             <>
               {tvShows.map(({ show }) => (
