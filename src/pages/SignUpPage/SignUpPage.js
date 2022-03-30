@@ -31,10 +31,9 @@ function SignUp(props) {
                 Sign Up
             </h1>
             <form onSubmit={userSignUp}>
-                <FormInputs label="Name" name="name" type="text" />
-                <FormInputs label="Username" name="username" type="text" />
-                <FormInputs label="Password" name="password" type="password" />
-
+                <FormInputs placeholder="Type name here" label="Name" name="name" type="text" />
+                <FormInputs placeholder="Type username here" label="Username" name="username" type="text" />
+                <FormInputs placeholder="Type password here" label="Password" name="password" type="password" />
                 <button type="submit">Sign Up!</button>
             </form>
             <Link to="/login">Log In</Link>
