@@ -5,12 +5,16 @@ import axios from "axios";
 import { TvShow } from "../../components/TvShow/TvShow";
 
 function HomePage() {
+
+  // states
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [tvShows, setTvShows] = useState([]);
-  
+
+  // if no shows
   const isEmpty = !tvShows || tvShows.length === 0;
 
+  // handling input field
   const inputHandler = (e) => {
     e.preventDefault();
 
@@ -20,6 +24,7 @@ function HomePage() {
     setSearchQuery(e.target.value);
   };
 
+  // connect to api for show by name
   const prepareSearchQuery = (query) => {
     const url = `http://api.tvmaze.com/search/shows?q=${query}`;
 
