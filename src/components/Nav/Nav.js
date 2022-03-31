@@ -12,7 +12,9 @@ function Nav() {
       <Link to="/">
         <div className="nav__logo"></div>
       </Link>
+      <Link to="/mylist">
       <img src={listIcon} alt="My list" className="nav__list"></img>
+      </Link>
     </section>
   );
 }

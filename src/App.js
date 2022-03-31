@@ -4,6 +4,7 @@ import Nav from './components/Nav/Nav'
 import HomePage from './pages/HomePage/HomePage'
 import SignUp from './pages/SignUpPage/SignUpPage';
 import Login from './pages/LogInPage/LoginPage';
+import MyList from './pages/MyList/MyListPage'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     </Switch>
     <Route path="/signup" component={SignUp}/>
     <Route path="/login" component={Login}/>
+    <Route path="/mylist" component={MyList}/>
     </BrowserRouter>
     </>
   );

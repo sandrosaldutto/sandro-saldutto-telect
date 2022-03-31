@@ -1,0 +1,12 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.list-item {
+  &__container {
+    margin: 2rem 0;
+    border-bottom: 1.25px solid $grey-black;
+    border-top: 1.25px solid $grey-black;
+  }
+}
