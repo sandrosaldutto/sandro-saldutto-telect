@@ -21,30 +21,21 @@
   &__logo {
     width: 40px;
     height: 40px;
+    background-image: url("../../assets/logos/logo-icon.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 
+    @include tablet {
+      width: 150px;
+      background-image: url("../../assets/logos/logo-wordmark.svg");
+    }
     &:hover {
       transform: scale(1.1);
     }
 
     &:active {
       transform: scale(1);
-    }
-
-    @include tablet {
-      display: none;
-    }
-  }
-
-  &__wordmark {
-    display: none;
-
-    @include tablet {
-      display: block;
-      height: 30px;
-    }
-
-    @include desktop {
-      height: 40px;
     }
   }
 

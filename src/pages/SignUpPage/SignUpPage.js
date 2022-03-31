@@ -29,7 +29,7 @@ function SignUp(props) {
   return (
     <div className="signup">
       <div className="signup__title-container">
-        <h1 className="signup__title">Log In</h1>
+        <h1 className="signup__title">Sign Up</h1>
       </div>
       <form className="signup__form" onSubmit={userSignUp}>
         <FormInputs
