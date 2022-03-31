@@ -70,6 +70,7 @@ function HomePage() {
                   thumbanilSrc={show.image && show.image.medium}
                   name={show.name}
                   rating={show.rating && show.rating.average}
+                  id={show.id}
                 />
               ))}
             </>
