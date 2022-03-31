@@ -19,8 +19,16 @@
   }
 
   &__logo {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
 
     @include tablet {
       display: none;
@@ -41,12 +49,32 @@
   }
 
   &__list {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $charcol-black;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
-  &__profile {
-    width: 30px;
-    height: 30px;
+  &__login-signup {
+    width: 28px;
+    height: 28px;
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $charcol-black;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }
