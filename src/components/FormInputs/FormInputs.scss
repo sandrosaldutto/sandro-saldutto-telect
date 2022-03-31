@@ -28,7 +28,11 @@
   }
 
   &__label {
-    margin-bottom: 0.25rem;
-    color: $white;
+    margin-bottom: 0.5rem;
+    color: $grey;
   }
+}
+
+::placeholder {
+  text-align: center;
 }
