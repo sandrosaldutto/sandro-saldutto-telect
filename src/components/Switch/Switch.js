@@ -10,12 +10,15 @@ function Switch({ showId }) {
     console.log(toggle)
   };
 
-  const handleToggle = (e, showId) => {
+  const handleToggle = (e, showId, userId) => {
     console.log(showId);
     axios
       .post("http://localhost:8080/mylist/", {
         showId: showId,
-        userId: 1
+        userId: userId
+      })
+      .then(res => {
+        console.log(res)
       })
   };
 
