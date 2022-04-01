@@ -6,12 +6,12 @@ import { useState } from 'react';
 
 
 function Nav() {
-  const [logout, setLogout] = useState(sessionStorage.authToken !== undefined);
-  console.log(sessionStorage.authToken)
+  const [showLogout, setShowLogout] = useState(sessionStorage.authToken !== undefined);
 
   const history = useHistory();
+
   const logoutHandler = () => {
-    setLogout(false)
+    setShowLogout(false)
     sessionStorage.clear();
     history.push("/login");
   };
@@ -26,7 +26,7 @@ function Nav() {
             className="nav__login-signup"
           />
         </Link>
-        {logout ? <button onClick={logoutHandler}>Logout</button> : ""}
+        {showLogout ? <button onClick={logoutHandler}>Logout</button> : ""}
       </div>
       <Link to="/">
         <div className="nav__logo"></div>

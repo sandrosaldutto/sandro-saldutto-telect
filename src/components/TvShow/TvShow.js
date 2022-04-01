@@ -1,7 +1,7 @@
 import "./TvShow.scss";
 import Switch from "../Switch/Switch";
 
-export function TvShow({ thumbanilSrc, name, rating, id }) {
+export function TvShow({ thumbanilSrc, name, rating, showId }) {
 
   return (
     <div className="tvshow">
@@ -9,7 +9,7 @@ export function TvShow({ thumbanilSrc, name, rating, id }) {
       <div className="tvshow__info">
         <h2 className="tvshow__name">{name}</h2>
         <p className="tvshow__rating">Rating: {rating || "N/A"}</p>
-        <Switch id={id}/>
+        <Switch showId={showId}/>
       </div>
     </div>
   );

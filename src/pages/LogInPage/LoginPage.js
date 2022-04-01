@@ -21,7 +21,9 @@ function Login(props) {
       .then((res) => {
         console.log(res);
         let token = res.data.token;
+        let userId = res.data.userId;
         sessionStorage.setItem("authToken", token);
+        sessionStorage.setItem("userId", userId);
         props.history.push("/");
       });
   };

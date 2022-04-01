@@ -10,12 +10,12 @@ function Switch({ showId }) {
     console.log(toggle)
   };
 
-  const handleToggle = (e, showId, userId) => {
+  const handleToggle = (e, showId) => {
     console.log(showId);
     axios
       .post("http://localhost:8080/mylist/", {
         showId: showId,
-        userId: userId
+        userId: sessionStorage.getItem("userId")
       })
       .then(res => {
         console.log(res)
