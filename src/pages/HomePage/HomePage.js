@@ -62,7 +62,7 @@ function HomePage() {
         <p className="home__shows-found">No Tv Shows found </p>
       )}
       {!isLoading && !isEmpty && (
-        <>
+        <div className="home__show">
           {tvShows.map(({ show }) => (
             <TvShow
               key={show.id}
@@ -71,7 +71,7 @@ function HomePage() {
               showId={show.id}
             />
           ))}
-        </>
+        </div>
       )}
     </main>
   );
