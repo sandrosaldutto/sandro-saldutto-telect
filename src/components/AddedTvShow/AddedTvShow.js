@@ -6,7 +6,6 @@ function AddedTvShow({
   thumbanilSrc,
   name,
   rating,
-  network,
   status,
   summary,
   website,
