@@ -1,11 +1,10 @@
 import "./HomePage.scss";
 import { useState } from "react";
-import { useDebounce } from "../../hooks/Debounce/Debounce"
+import { useDebounce } from "../../hooks/Debounce/Debounce";
 import axios from "axios";
 import TvShow from "../../components/TvShow/TvShow";
 
 function HomePage() {
-
   // states
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -18,7 +17,7 @@ function HomePage() {
   const inputHandler = (e) => {
     e.preventDefault();
 
-    if(e.target.value === "") {
+    if (e.target.value === "") {
       setTvShows([]);
     }
     setSearchQuery(e.target.value);
@@ -33,7 +32,7 @@ function HomePage() {
 
   const searchTvShow = async () => {
     if (!searchQuery || searchQuery.trim() === "") return;
-    
+
     setLoading(true);
 
     const URL = prepareSearchQuery(searchQuery);
@@ -43,10 +42,9 @@ function HomePage() {
     });
 
     if (res) {
-      setTvShows(res.data)
+      setTvShows(res.data);
     }
     setLoading(false);
-
   };
 
   useDebounce(searchQuery, 500, searchTvShow);
@@ -54,26 +52,28 @@ function HomePage() {
   return (
     <main className="home">
       <input
-        value={searchQuery} 
+        value={searchQuery}
         onChange={inputHandler}
         type="search"
         placeholder="Search for Show"
         className="home__searchbar"
       ></input>
-      {!isLoading && isEmpty && <p className="home__shows-found">No Tv Shows found </p>}
+      {!isLoading && isEmpty && (
+        <p className="home__shows-found">No Tv Shows found </p>
+      )}
       {!isLoading && !isEmpty && (
-            <>
-              {tvShows.map(({ show }) => (
-                <TvShow
-                  key={show.id}
-                  thumbanilSrc={show.image && show.image.medium}
-                  name={show.name}
-                  rating={show.rating && show.rating.average}
-                  showId={show.id}
-                />
-              ))}
-            </>
-          )}
+        <>
+          {tvShows.map(({ show }) => (
+            <TvShow
+              key={show.id}
+              thumbanilSrc={show.image && show.image.medium}
+              name={show.name}
+              rating={show.rating && show.rating.average}
+              showId={show.id}
+            />
+          ))}
+        </>
+      )}
     </main>
   );
 }

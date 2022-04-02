@@ -43,10 +43,12 @@ function SignUp(props) {
           name="password"
           type="password"
         />
-        <button className="signup__signup-button" type="submit">Sign Up!</button>
+        <button className="signup__signup-button" type="submit">
+          Sign Up!
+        </button>
       </form>
       <Link to="/login">
-          <button  className="signup__login-button">Log In</button>
+        <button className="signup__login-button">Log In</button>
       </Link>
     </div>
   );

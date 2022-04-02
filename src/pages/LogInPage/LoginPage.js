@@ -33,14 +33,24 @@ function Login(props) {
         <h1 className="login__title">Log In</h1>
       </div>
       <form className="login__form" onSubmit={userLogin}>
-        <FormInputs placeholder="Type username here" label="Username" name="username" type="text" />
-        <FormInputs placeholder="Type password here" label="Password" name="password" type="password" />
+        <FormInputs
+          placeholder="Type username here"
+          label="Username"
+          name="username"
+          type="text"
+        />
+        <FormInputs
+          placeholder="Type password here"
+          label="Password"
+          name="password"
+          type="password"
+        />
         <button className="login__login-button" type="submit">
           Log In
         </button>
       </form>
       <Link to="/signup">
-          <button  className="login__signup-button">Sign Up</button>
+        <button className="login__signup-button">Sign Up</button>
       </Link>
     </div>
   );
