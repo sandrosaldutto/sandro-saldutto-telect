@@ -4,48 +4,63 @@
 @use "../../styles/partials/mixins" as *;
 
 .added-tvshow {
-  width: 90%;
+  width: 20rem;
+  height: 30rem;
+  margin: 1rem 1rem;
+  background-color: $grey-black-transparent;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  background-color: $grey-black-transparent;
-  border-radius: 10px;
 
   &__image {
-    width: 100%;
+    width: 50%;
+    border-radius: 5px;
+  }
+
+  &__delete {
+    height: 25px;
+  }
+
+  &__top {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__info-container {
-    display: flex;
-    align-items: center;
-    text-align: center;
     margin: 1rem 0;
+    display: flex;
   }
 
   &__name {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
+    color: $white;
   }
 
   &__info {
     margin: 0;
+    font-size: 1rem;
+    color: $telect-teal;
   }
 
   &__column {
+    margin: 0 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 0 0.5rem;
   }
 
   &__column-title {
     margin: 0.25rem 0;
-  }
-
-  &__summary {
-    display: none;
+    color: $grey-black;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1.25px solid $charcol-black;
   }
 
   &__website {
@@ -72,9 +87,15 @@
   }
 
   &__buttons {
+    width: 75%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__no-site {
+    margin: 1.5rem 0;
+    font-size: 0.75rem;
+    color: $grey-black;
   }
 }

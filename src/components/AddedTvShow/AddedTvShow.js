@@ -1,4 +1,6 @@
 import "./AddedTvShow.scss";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import deleteIcon  from  "../../assets/icons/delete.svg"
 
 function AddedTvShow({
   thumbanilSrc,
@@ -20,39 +22,38 @@ function AddedTvShow({
 
   return (
     <div className="added-tvshow">
-      <h2 className="added-tvshow__name">{name}</h2>
-      <img className="added-tvshow__image" src={thumbanilSrc} />
-      <div className="added-tvshow__info-container">
-        <div className="added-tvshow__column">
-          <h3 className="added-tvshow__column-title">Rating</h3>
-          <p className="added-tvshow__info">{rating ? rating : "N/A"}</p>
+        <div className="added-tvshow__top">
+        <h2 className="added-tvshow__name">{name}</h2>
+        <img className="added-tvshow__delete" src={deleteIcon}/>
         </div>
-        <div className="added-tvshow__column">
-          <h3 className="added-tvshow__column-title">Network</h3>
-          <p className="added-tvshow__info">{network || "N/A"}</p>
+        <img className="added-tvshow__image" src={thumbanilSrc} />
+        {/* <p className="added-tvshow__summary">
+          {summary && removeTags(summary)}
+        </p> */}
+        <div className="added-tvshow__info-container">
+          <div className="added-tvshow__column">
+            <h3 className="added-tvshow__column-title">Rating</h3>
+            <p className="added-tvshow__info">{rating ? rating : "N/A"}</p>
+          </div>
+          <div className="added-tvshow__column">
+            <h3 className="added-tvshow__column-title">Status</h3>
+            <p className="added-tvshow__info">{status && status}</p>
+          </div>
         </div>
-        <div className="added-tvshow__column">
-          <h3 className="added-tvshow__column-title">Status</h3>
-          <p className="added-tvshow__info">{status && status}</p>
-        </div>
-      </div>
-      <p className="added-tvshow__summary">
-        Summary: {summary && removeTags(summary)}
-      </p>
-      <div className="added-tvshow__buttons">
-        {website ? (
-         
-          <button className="added-tvshow__website">
-            <a href={website} target="_blank" rel="noreferrer">
-              website
-            </a>
-          </button>
-
-        ) : (
-          "No official site"
-        )}
-        <button className="added-tvshow__episodes">Episodes</button>
-        </div>
+        <div className="added-tvshow__buttons">
+          {website ? (
+            <button className="added-tvshow__website">
+              <a href={website} target="_blank" rel="noreferrer">
+                Official Site
+              </a>
+            </button>
+          ) : (
+            <p className="added-tvshow__no-site">Official Site: N/A</p>
+          )}
+          <Link to="/">
+            <button className="added-tvshow__episodes">Episodes</button>
+          </Link>
+        </div>    
     </div>
   );
 }

@@ -48,7 +48,6 @@ class MyList extends Component {
               name={show.name}
               rating={show.rating && show.rating.average}
               showId={show.id}
-              network={show.network.name}
               status={show.status}
               summary={show.summary}
               website={show.officialSite}
