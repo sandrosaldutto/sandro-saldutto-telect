@@ -1,23 +1,14 @@
 import "./MyListPage.scss";
 import { Component } from "react";
 import axios from "axios";
-import TvShow from "../../components/TvShow/TvShow";
+import AddedTvShow from "../../components/AddedTvShow/AddedTvShow";
 
 class MyList extends Component {
   state = {
     showIds: [],
     shows: [],
-    selectedShow: null,
   };
-
-  tvShowDetails = (showId) => {
-    axios.get(`https://api.tvmaze.com/shows/${showId}`).then((res) => {
-      this.setState({
-        selectedShow: res.data,
-      });
-    });
-  };
-
+  
   componentDidMount() {
     const userId = sessionStorage.getItem("userId");
     axios.get(`http://localhost:8080/mylist/${userId}`).then((res) => {
@@ -26,15 +17,16 @@ class MyList extends Component {
       });
     });
   }
-
+  
   componentDidUpdate() {
     if (this.state.shows.length === 0) {
       Promise.all(
         this.state.showIds.map((show) => {
           return axios
-            .get(`https://api.tvmaze.com/shows/${show.showId}`)
-            .then((res) => {
-              return res.data;
+          .get(`https://api.tvmaze.com/shows/${show.showId}`)
+          .then((res) => {
+            console.log(res.data)
+            return res.data;
             });
         })
       ).then((res) => {
@@ -48,15 +40,18 @@ class MyList extends Component {
   render() {
     return (
       <section className="mylist">
-        <div>
+        <div className="mylist__addedshow">
           {this.state.shows.map((show) => (
-            <TvShow
-              onClick={this.tvShowDetails}
+            <AddedTvShow
               key={show.id}
-              thumbanilSrc={show.image && show.image.medium}
+              thumbanilSrc={show.image && show.image.original}
               name={show.name}
               rating={show.rating && show.rating.average}
               showId={show.id}
+              network={show.network.name}
+              status={show.status}
+              summary={show.summary}
+              website={show.officialSite}
             />
           ))}
         </div>

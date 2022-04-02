@@ -13,4 +13,11 @@
   &__shows-found {
     color: $grey-black;
   }
+
+  &__addedshow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
