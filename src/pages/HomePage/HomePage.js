@@ -2,7 +2,7 @@ import "./HomePage.scss";
 import { useState } from "react";
 import { useDebounce } from "../../hooks/Debounce/Debounce"
 import axios from "axios";
-import { TvShow } from "../../components/TvShow/TvShow";
+import TvShow from "../../components/TvShow/TvShow";
 
 function HomePage() {
 

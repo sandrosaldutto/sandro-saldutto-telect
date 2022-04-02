@@ -1,10 +1,10 @@
 import "./TvShow.scss";
 import Switch from "../Switch/Switch";
 
-export function TvShow({ thumbanilSrc, name, rating, showId }) {
+function TvShow({ thumbanilSrc, name, rating, showId, onClick }) {
 
   return (
-    <div className="tvshow">
+    <div onClick={() => onClick(showId) } className="tvshow">
       <img className="tvshow__image" src={thumbanilSrc} />
       <div className="tvshow__info">
         <h2 className="tvshow__name">{name}</h2>
@@ -14,3 +14,5 @@ export function TvShow({ thumbanilSrc, name, rating, showId }) {
     </div>
   );
 }
+
+export default TvShow;
