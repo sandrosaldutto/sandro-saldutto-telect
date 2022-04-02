@@ -31,7 +31,7 @@ function Login(props) {
   return (
     <div className="login">
       <div className="login__title-container">
-        <h1 className="login__title">Log In</h1>
+        <h1 className="login__title">Log-In</h1>
       </div>
       <div className="login__content-container">
         <img className="login__bot-image" src={LoginHero} />
@@ -50,14 +50,14 @@ function Login(props) {
               type="password"
             />
             <button className="login__login-button" type="submit">
-              Log In
+              Log-In
             </button>
           </form>
         </div>
       </div>
       <div className="login__signup-container">
         <Link to="/signup">
-          <button className="login__signup-button">Sign Up</button>
+          <button className="login__signup-button">Sign-up</button>
         </Link>
       </div>
     </div>
