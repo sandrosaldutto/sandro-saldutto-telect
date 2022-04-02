@@ -2,16 +2,17 @@ import "./Nav.scss";
 import listIcon from "../../assets/icons/list.svg";
 import loginSignupIcon from "../../assets/icons/login-signup.svg";
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from 'react';
-
+import { useState } from "react";
 
 function Nav() {
-  const [showLogout, setShowLogout] = useState(sessionStorage.authToken !== undefined);
+  const [showLogout, setShowLogout] = useState(
+    sessionStorage.authToken !== undefined
+  );
 
   const history = useHistory();
 
   const logoutHandler = () => {
-    setShowLogout(false)
+    setShowLogout(false);
     sessionStorage.clear();
     history.push("/login");
   };

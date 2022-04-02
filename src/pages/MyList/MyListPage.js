@@ -16,12 +16,11 @@ class MyList extends Component {
         selectedShow: res.data,
       });
     });
-  }
+  };
 
   componentDidMount() {
     const userId = sessionStorage.getItem("userId");
     axios.get(`http://localhost:8080/mylist/${userId}`).then((res) => {
-      console.log(res);
       this.setState({
         showIds: res.data,
       });
@@ -39,7 +38,6 @@ class MyList extends Component {
             });
         })
       ).then((res) => {
-        console.log(res);
         this.setState({
           shows: res,
         });
@@ -48,30 +46,22 @@ class MyList extends Component {
   }
 
   render() {
-    if (this.state.selectedShow === null) {
-      return (
-        <section className="mylist">
-          <div>
-            {this.state.shows.map((show) => (
-              <TvShow
-                onClick={this.tvShowDetails}
-                key={show.id}
-                thumbanilSrc={show.image && show.image.medium}
-                name={show.name}
-                rating={show.rating && show.rating.average}
-                showId={show.id}
-              />
-            ))}
-          </div>
-        </section>
-      );
-    }
-    if (this.state.selectedShow !== null) {
-      return (
-      // backbutton with onclick with a function that sets state for selected shoe to null
-      <div>show</div>
-      // display tv show details
-      )}
+    return (
+      <section className="mylist">
+        <div>
+          {this.state.shows.map((show) => (
+            <TvShow
+              onClick={this.tvShowDetails}
+              key={show.id}
+              thumbanilSrc={show.image && show.image.medium}
+              name={show.name}
+              rating={show.rating && show.rating.average}
+              showId={show.id}
+            />
+          ))}
+        </div>
+      </section>
+    );
   }
 }
 

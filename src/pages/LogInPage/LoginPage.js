@@ -19,7 +19,6 @@ function Login(props) {
         password: e.target.password.value,
       })
       .then((res) => {
-        console.log(res);
         let token = res.data.token;
         let userId = res.data.userId;
         sessionStorage.setItem("authToken", token);

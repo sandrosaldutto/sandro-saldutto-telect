@@ -8,12 +8,6 @@ function SignUp(props) {
   const userSignUp = (e) => {
     e.preventDefault();
 
-    console.log({
-      name: e.target.name.value,
-      username: e.target.username.value,
-      password: e.target.password.value,
-    });
-
     axios
       .post("http://localhost:8080/users/register", {
         name: e.target.name.value,
@@ -21,7 +15,6 @@ function SignUp(props) {
         password: e.target.password.value,
       })
       .then((res) => {
-        console.log(res);
         props.history.push("/login");
       });
   };

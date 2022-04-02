@@ -39,11 +39,10 @@ function HomePage() {
     const URL = prepareSearchQuery(searchQuery);
 
     const res = await axios.get(URL).catch((err) => {
-      console.log("Error: ", err);
+      console.log(err);
     });
 
     if (res) {
-      console.log("Res: ", res.data);
       setTvShows(res.data)
     }
     setLoading(false);
