@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import FormInputs from "../../components/FormInputs/FormInputs";
 import "./LoginPage.scss";
+import LoginHero from "../../assets/images/login-bot.svg";
 
 function Login(props) {
   const userLogin = (e) => {
@@ -32,26 +33,33 @@ function Login(props) {
       <div className="login__title-container">
         <h1 className="login__title">Log In</h1>
       </div>
-      <form className="login__form" onSubmit={userLogin}>
-        <FormInputs
-          placeholder="Type username here"
-          label="Username"
-          name="username"
-          type="text"
-        />
-        <FormInputs
-          placeholder="Type password here"
-          label="Password"
-          name="password"
-          type="password"
-        />
-        <button className="login__login-button" type="submit">
-          Log In
-        </button>
-      </form>
-      <Link to="/signup">
-        <button className="login__signup-button">Sign Up</button>
-      </Link>
+      <div className="login__content-container">
+        <img className="login__bot-image" src={LoginHero} />
+        <div className="login__form-container">
+          <form className="login__form" onSubmit={userLogin}>
+            <FormInputs
+              placeholder="Type username here"
+              label="Username"
+              name="username"
+              type="text"
+            />
+            <FormInputs
+              placeholder="Type password here"
+              label="Password"
+              name="password"
+              type="password"
+            />
+            <button className="login__login-button" type="submit">
+              Log In
+            </button>
+          </form>
+        </div>
+      </div>
+      <div className="login__signup-container">
+        <Link to="/signup">
+          <button className="login__signup-button">Sign Up</button>
+        </Link>
+      </div>
     </div>
   );
 }

@@ -10,11 +10,52 @@
   align-items: center;
 
   @include tablet {
-    padding: 0 7.5rem;
+    padding: 0 1rem;
   }
 
-  @include desktop {
-    padding: 0 15rem;
+  &__form-container {
+    width: 100%;
+  }
+
+  &__signup-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    width: 75%;
+    border-top: 1.25px solid $grey-black;
+
+    @include tablet {
+      width: 88%;
+    }
+  }
+
+  &__content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__bot-image {
+    width: 10rem;
+    margin: 2rem 0;
+
+    @include tablet {
+      width: 17.5rem;
+      margin-left: 6rem;
+    }
+
+    @include desktop {
+      margin-left: 8rem;
+    }
   }
 
   &__form {
@@ -34,6 +75,10 @@
   &__title-container {
     border-bottom: 1.25px solid $grey-black;
     width: 70%;
+
+    @include tablet {
+      width: 85%;
+    }
   }
 
   &__login-button {
@@ -55,15 +100,17 @@
     flex-direction: column;
     height: 2.25rem;
     border-radius: 50px;
-    padding: 0 0.5rem;
     background-color: $charcol-black;
     border: none;
-    color: $white;
+    color: $charcol-black;
     font-size: 0.85rem;
     font-weight: 600;
+    background-color: $telect-light-teal;
+    padding: 0.65rem 1.5rem 0 1.5rem;
 
     @include tablet {
       height: 2.5rem;
+      font-size: 1rem;
     }
   }
 }
