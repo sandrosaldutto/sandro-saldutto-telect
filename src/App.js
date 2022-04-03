@@ -5,12 +5,26 @@ import HomePage from "./pages/HomePage/HomePage";
 import SignUp from "./pages/SignUpPage/SignUpPage";
 import Login from "./pages/LogInPage/LoginPage";
 import MyList from "./pages/MyList/MyListPage";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useState } from "react";
 
 function App() {
+  const [showLogout, setShowLogout] = useState(
+    sessionStorage.authToken !== undefined
+  );
+
+  const history = useHistory();
+
+  const logoutHandler = () => {
+    setShowLogout(false);
+    sessionStorage.clear();
+    history.push("/login");
+  };
+  console.log(showLogout)
   return (
     <>
       <BrowserRouter>
-        <Nav />
+        <Nav onClick={logoutHandler} showLogout={showLogout}/>
         <Switch>
           <Route exact path="/" component={HomePage} />
         </Switch>

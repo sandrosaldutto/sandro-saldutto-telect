@@ -1,21 +1,9 @@
 import "./Nav.scss";
 import listIcon from "../../assets/icons/list.svg";
 import loginSignupIcon from "../../assets/icons/login-signup.svg";
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function Nav() {
-  const [showLogout, setShowLogout] = useState(
-    sessionStorage.authToken !== undefined
-  );
-
-  const history = useHistory();
-
-  const logoutHandler = () => {
-    setShowLogout(false);
-    sessionStorage.clear();
-    history.push("/login");
-  };
+function Nav({onClick, showLogout}) {
 
   return (
     <section className="nav">
@@ -27,7 +15,7 @@ function Nav() {
             className="nav__login-signup"
           />
         </Link>
-        {showLogout ? <button onClick={logoutHandler}>Logout</button> : ""}
+        {showLogout ? <button onClick={onClick}>Logout</button> : ""}
       </div>
       <Link to="/">
         <div className="nav__logo"></div>
