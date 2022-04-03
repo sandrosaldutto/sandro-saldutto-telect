@@ -73,11 +73,13 @@
   }
 
   &__title-container {
+    margin-top: 5rem;
     border-bottom: 1.25px solid $grey-black;
     width: 70%;
 
     @include tablet {
       width: 85%;
+      margin-top: 7.5rem;
     }
   }
 

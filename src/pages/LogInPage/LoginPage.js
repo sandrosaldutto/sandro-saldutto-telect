@@ -4,15 +4,13 @@ import axios from "axios";
 import FormInputs from "../../components/FormInputs/FormInputs";
 import "./LoginPage.scss";
 import LoginHero from "../../assets/images/login-bot.svg";
+import { useState } from "react";
+
 
 function Login(props) {
+
   const userLogin = (e) => {
     e.preventDefault();
-
-    console.log({
-      username: e.target.username.value,
-      password: e.target.password.value,
-    });
 
     axios
       .post("http://localhost:8080/users/login", {

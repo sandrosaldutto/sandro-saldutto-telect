@@ -75,9 +75,11 @@
   &__title-container {
     border-bottom: 1.25px solid $grey-black;
     width: 70%;
+    margin-top: 5rem;
 
     @include tablet {
       width: 85%;
+      margin-top: 7.5rem;
     }
   }
 
