@@ -15,6 +15,10 @@ function App() {
 
   const history = useHistory();
 
+  const showLogoutHandler = () => {
+    setShowLogout(true)
+  }
+
   const logoutHandler = () => {
     setShowLogout(false);
     sessionStorage.clear();
@@ -29,7 +33,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
         </Switch>
         <Route path="/signup" component={SignUp} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={(routerProps) => <Login {...routerProps} showLogoutHandler={showLogoutHandler} />}/>
         <Route path="/mylist" component={MyList} />
       </BrowserRouter>
     </>

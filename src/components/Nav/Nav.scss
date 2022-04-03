@@ -52,10 +52,11 @@
     &:hover {
       background-color: $charcol-black;
     }
+  }
 
-    &:active {
-      transform: scale(0.9);
-    }
+  &__list-active {
+    background-color: $charcol-black;
+    border-radius: 5px;
   }
 
   &__login-signup {
@@ -67,9 +68,10 @@
     &:hover {
       background-color: $charcol-black;
     }
+  }
 
-    &:active {
-      transform: scale(0.9);
-    }
+  &__login-signup-active {
+    background-color: $charcol-black;
+    border-radius: 5px;
   }
 }

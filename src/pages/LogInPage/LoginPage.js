@@ -24,6 +24,7 @@ function Login(props) {
         let userId = res.data.userId;
         sessionStorage.setItem("authToken", token);
         sessionStorage.setItem("userId", userId);
+        props.showLogoutHandler()
         props.history.push("/");
       });
   };
