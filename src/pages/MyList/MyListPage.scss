@@ -5,11 +5,15 @@
 
 .mylist {
   &__addedshow {
-    margin: 1rem 0;
+    margin: 6rem 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    @include tablet {
+      margin-top: 8rem;
+    }
   }
 }

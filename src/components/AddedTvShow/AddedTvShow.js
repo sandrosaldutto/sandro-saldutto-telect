@@ -10,14 +10,15 @@ function AddedTvShow({
   summary,
   website,
 }) {
-  const removeTags = (text) => {
-    if (text === null || text === "") {
-      return false;
-    } else {
-      text = text.toString();
-    }
-    return text.replace(/(<([^>]+)>)/gi, "");
-  };
+  
+  // const removeTags = (text) => {
+  //   if (text === null || text === "") {
+  //     return false;
+  //   } else {
+  //     text = text.toString();
+  //   }
+  //   return text.replace(/(<([^>]+)>)/gi, "");
+  // };
 
   return (
     <div className="added-tvshow">

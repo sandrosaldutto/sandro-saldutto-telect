@@ -8,7 +8,7 @@ class MyList extends Component {
     showIds: [],
     shows: [],
   };
-  
+
   componentDidMount() {
     const userId = sessionStorage.getItem("userId");
     axios.get(`http://localhost:8080/mylist/${userId}`).then((res) => {
@@ -17,16 +17,16 @@ class MyList extends Component {
       });
     });
   }
-  
+
   componentDidUpdate() {
     if (this.state.shows.length === 0) {
       Promise.all(
         this.state.showIds.map((show) => {
           return axios
-          .get(`https://api.tvmaze.com/shows/${show.showId}`)
-          .then((res) => {
-            console.log(res.data)
-            return res.data;
+            .get(`https://api.tvmaze.com/shows/${show.showId}`)
+            .then((res) => {
+              console.log(res.data);
+              return res.data;
             });
         })
       ).then((res) => {
