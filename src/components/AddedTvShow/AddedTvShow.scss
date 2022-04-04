@@ -16,8 +16,24 @@
   align-items: center;
   padding: 1rem;
 
+  &--back {
+    background-color: $telect-dark-teal;
+  }
+
+  &__back-container {
+    padding: 0 1rem;
+  }
+
+  &__back-title {
+    text-align: center;
+  }
+
   &__flip {
     height: 1.5rem;
+
+    &--bottom {
+      transform: rotate(180deg);
+    }
   }
 
   &__image {

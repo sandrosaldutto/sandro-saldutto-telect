@@ -14,6 +14,7 @@ function AddedTvShow({
   website,
   showId,
   deleteHandler,
+  premiered
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -74,14 +75,17 @@ function AddedTvShow({
           </Link>
         </div>
       </div>
-      <div className="added-tvshow">
+      <div className="added-tvshow added-tvshow--back">
+        <div className="added-tvshow__back-container">
+        <h2 className="added-tvshow__back-title">Summary</h2>
         <p className="added-tvshow__summary">
-          {summary && removeTags(summary)}
+         {summary && removeTags(summary)}
         </p>
+        </div>
         <img
           onClick={flipHandler}
           src={flipIcon}
-          className="added-tvshow__flip"
+          className="added-tvshow__flip added-tvshow__flip--bottom"
           alt="flip card"
         />
       </div>

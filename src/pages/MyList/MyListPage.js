@@ -57,6 +57,7 @@ class MyList extends Component {
         <div className="mylist__addedshow">
           {this.state.shows.map((show) => (
             <AddedTvShow
+              premiered={show.premiered}
               deleteHandler={this.deleteHandler}
               key={show.id}
               thumbanilSrc={show.image && show.image.original}
