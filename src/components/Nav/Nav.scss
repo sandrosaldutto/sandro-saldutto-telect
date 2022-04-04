@@ -23,6 +23,19 @@
     display: flex;
   }
 
+  &__logout {
+    background-color: $telect-teal;
+    border: none;
+    color: $white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $charcol-black;
+      border: 1px $telect-teal solid;
+    }
+  }
+
   &__logo {
     width: 40px;
     height: 40px;

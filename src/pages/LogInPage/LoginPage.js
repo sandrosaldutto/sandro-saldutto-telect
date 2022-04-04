@@ -4,11 +4,8 @@ import axios from "axios";
 import FormInputs from "../../components/FormInputs/FormInputs";
 import "./LoginPage.scss";
 import LoginHero from "../../assets/images/login-bot.svg";
-import { useState } from "react";
-
 
 function Login(props) {
-
   const userLogin = (e) => {
     e.preventDefault();
 
@@ -22,7 +19,7 @@ function Login(props) {
         let userId = res.data.userId;
         sessionStorage.setItem("authToken", token);
         sessionStorage.setItem("userId", userId);
-        props.showLogoutHandler()
+        props.showLogoutHandler();
         props.history.push("/");
       });
   };
@@ -33,7 +30,7 @@ function Login(props) {
         <h1 className="login__title">Log-In</h1>
       </div>
       <div className="login__content-container">
-        <img className="login__bot-image" src={LoginHero} />
+        <img className="login__bot-image" src={LoginHero} alt="mascot" />
         <div className="login__form-container">
           <form className="login__form" onSubmit={userLogin}>
             <FormInputs

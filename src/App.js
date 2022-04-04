@@ -16,24 +16,28 @@ function App() {
   const history = useHistory();
 
   const showLogoutHandler = () => {
-    setShowLogout(true)
-  }
+    setShowLogout(true);
+  };
 
   const logoutHandler = () => {
     setShowLogout(false);
     sessionStorage.clear();
     history.push("/login");
   };
-  console.log(showLogout)
   return (
     <>
       <BrowserRouter>
-        <Nav onClick={logoutHandler} showLogout={showLogout}/>
+        <Nav onClick={logoutHandler} showLogout={showLogout} />
         <Switch>
           <Route exact path="/" component={HomePage} />
         </Switch>
         <Route path="/signup" component={SignUp} />
-        <Route path="/login" render={(routerProps) => <Login {...routerProps} showLogoutHandler={showLogoutHandler} />}/>
+        <Route
+          path="/login"
+          render={(routerProps) => (
+            <Login {...routerProps} showLogoutHandler={showLogoutHandler} />
+          )}
+        />
         <Route path="/mylist" component={MyList} />
       </BrowserRouter>
     </>

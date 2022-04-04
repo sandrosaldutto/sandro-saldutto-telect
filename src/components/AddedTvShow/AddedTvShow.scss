@@ -14,6 +14,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 
   &__image {
     width: 50%;
@@ -37,7 +38,7 @@
   }
 
   &__name {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     color: $white;
   }
 
@@ -69,6 +70,11 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 50px;
+
+    &:hover {
+      background-color: $charcol-black;
+      border: 1px $telect-teal solid;
+    }
   }
 
   &__website-container {
@@ -84,6 +90,12 @@
     border: none;
     border-radius: 50px;
     color: $grey;
+
+    &:hover {
+      background-color: $charcol-black;
+      border: 1px $telect-teal solid;
+      color: $white;
+    }
   }
 
   &__buttons {

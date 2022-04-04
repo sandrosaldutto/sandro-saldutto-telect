@@ -25,7 +25,6 @@ class MyList extends Component {
           return axios
             .get(`https://api.tvmaze.com/shows/${show.showId}`)
             .then((res) => {
-              console.log(res.data);
               return res.data;
             });
         })

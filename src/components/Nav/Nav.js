@@ -3,21 +3,28 @@ import listIcon from "../../assets/icons/list.svg";
 import loginSignupIcon from "../../assets/icons/login-signup.svg";
 import { NavLink, Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function Nav({onClick, showLogout}) {
-
+function Nav({ onClick, showLogout }) {
   return (
     <section className="nav">
       <div className="nav__login-logout">
         <NavLink to="/login" activeClassName="nav__login-signup-active">
-        {!showLogout ?
-          <img
-            src={loginSignupIcon}
-            alt="Login-signup"
-            className="nav__login-signup"
-          />
-          : ""}
+          {!showLogout ? (
+            <img
+              src={loginSignupIcon}
+              alt="Login-signup"
+              className="nav__login-signup"
+            />
+          ) : (
+            ""
+          )}
         </NavLink>
-        {showLogout ? <button onClick={onClick}>Logout</button> : ""}
+        {showLogout ? (
+          <button className="nav__logout" onClick={onClick}>
+            Logout
+          </button>
+        ) : (
+          ""
+        )}
       </div>
       <Link to="/">
         <div className="nav__logo"></div>

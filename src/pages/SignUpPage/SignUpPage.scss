@@ -45,7 +45,7 @@
   }
 
   &__bot-image {
-    width: 10rem;
+    width: 12.5rem;
     margin: 2rem 0;
 
     @include tablet {
@@ -96,6 +96,11 @@
     color: $white;
     font-size: 0.85rem;
     font-weight: 600;
+
+    &:hover {
+      background-color: $charcol-black;
+      border: 1px $telect-teal solid;
+    }
   }
 
   &__login-button {
@@ -108,7 +113,13 @@
     font-size: 0.85rem;
     font-weight: 600;
     background-color: $telect-light-teal;
-    padding: 0.65rem 1.5rem 0 1.5rem;
+    padding: 0.6rem 1.5rem 0 1.5rem;
+
+    &:hover {
+      background-color: $charcol-black;
+      border: 1px $telect-teal solid;
+      color: $white;
+    }
 
     @include tablet {
       height: 2.5rem;
