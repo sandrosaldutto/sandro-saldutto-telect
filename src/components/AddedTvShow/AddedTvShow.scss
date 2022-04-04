@@ -16,6 +16,10 @@
   align-items: center;
   padding: 1rem;
 
+  &__flip {
+    height: 1.5rem;
+  }
+
   &__image {
     width: 50%;
     border-radius: 5px;

@@ -59,7 +59,7 @@ function HomePage() {
         className="home__searchbar"
       ></input>
       {!isLoading && isEmpty && (
-        <p className="home__shows-found">No Tv Shows found </p>
+        <p className="home__shows-found">No Tv Shows Found </p>
       )}
       {!isLoading && !isEmpty && (
         <div className="home__show">

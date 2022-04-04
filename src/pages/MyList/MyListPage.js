@@ -9,6 +9,21 @@ class MyList extends Component {
     shows: [],
   };
 
+  deleteHandler = (showId) => {
+    const userId = sessionStorage.getItem("userId");
+
+    axios
+      .delete(`http://localhost:8080/mylist/${userId}/${showId}`)
+      .then((res) => {
+        console.log(res.data);
+        this.setState({
+          shows: [...this.state.shows].filter(show => {
+            return show.id !== showId
+          })
+        })
+      });
+  };
+
   componentDidMount() {
     const userId = sessionStorage.getItem("userId");
     axios.get(`http://localhost:8080/mylist/${userId}`).then((res) => {
@@ -42,6 +57,7 @@ class MyList extends Component {
         <div className="mylist__addedshow">
           {this.state.shows.map((show) => (
             <AddedTvShow
+              deleteHandler={this.deleteHandler}
               key={show.id}
               thumbanilSrc={show.image && show.image.original}
               name={show.name}
