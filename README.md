@@ -10,9 +10,6 @@ Tools used for Telect:
 Front-End:
 Create-react-app, react-router, and SASS.
 
-Back-End:
-Node/Express backend API with JWT for auth, and Knex to query a MySQL database.
-
 Installation:
 
 Set up the frontend:
