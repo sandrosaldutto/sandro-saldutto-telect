@@ -4,13 +4,14 @@ import axios from "axios";
 import FormInputs from "../../components/FormInputs/FormInputs";
 import "./LoginPage.scss";
 import LoginHero from "../../assets/images/login-bot.svg";
+import { API_URL } from "../../config/index"
 
 function Login(props) {
   const userLogin = (e) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8080/users/login", {
+      .post(`${API_URL}/users/login`, {
         username: e.target.username.value,
         password: e.target.password.value,
       })

@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import FormInputs from "../../components/FormInputs/FormInputs";
 import signupHero from "../../assets/images/signup-bot.svg";
 import "./SignUpPage.scss";
+import { API_URL } from "../../config/index"
 
 function SignUp(props) {
   const userSignUp = (e) => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8080/users/register", {
+      .post(`${API_URL}/users/register`, {
         name: e.target.name.value,
         username: e.target.username.value,
         password: e.target.password.value,

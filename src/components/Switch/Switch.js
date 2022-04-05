@@ -1,6 +1,7 @@
 import "./Switch.scss";
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "../../config/index"
 
 function Switch({ showId }) {
   const [toggle, setToggle] = useState(true);
@@ -11,7 +12,7 @@ function Switch({ showId }) {
 
   const handleToggle = (showId) => {
     axios
-      .post("http://localhost:8080/mylist/", {
+      .post(`${API_URL}/mylist/`, {
         showId: showId,
         userId: sessionStorage.getItem("userId"),
       })

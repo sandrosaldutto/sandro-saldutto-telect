@@ -2,6 +2,7 @@ import "./MyListPage.scss";
 import { Component } from "react";
 import axios from "axios";
 import AddedTvShow from "../../components/AddedTvShow/AddedTvShow";
+import { API_URL } from "../../config/index"
 
 class MyList extends Component {
   state = {
@@ -12,7 +13,7 @@ class MyList extends Component {
     const userId = sessionStorage.getItem("userId");
 
     axios
-      .delete(`http://localhost:8080/mylist/${userId}/${showId}`)
+      .delete(`${API_URL}/mylist/${userId}/${showId}`)
       .then((res) => {
         console.log(res.data);
         this.setState({
@@ -25,7 +26,7 @@ class MyList extends Component {
 
   componentDidMount() {
     const userId = sessionStorage.getItem("userId");
-    axios.get(`http://localhost:8080/mylist/${userId}`).then((res) => {
+    axios.get(`${API_URL}/mylist/${userId}`).then((res) => {
       console.log(res);
       res.data.map((show) => {
         axios.get(`https://api.tvmaze.com/shows/${show.showId}`).then((res) => {
