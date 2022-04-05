@@ -1,6 +1,6 @@
 import "./HomePage.scss";
 import { useState } from "react";
-import { useDebounce } from "../../hooks/Debounce/Debounce";
+import { useDebounce } from "../../hooks/debounce";
 import axios from "axios";
 import TvShow from "../../components/TvShow/TvShow";
 
