@@ -5,7 +5,6 @@ import AddedTvShow from "../../components/AddedTvShow/AddedTvShow";
 
 class MyList extends Component {
   state = {
-    showIds: [],
     shows: [],
   };
 
@@ -17,44 +16,32 @@ class MyList extends Component {
       .then((res) => {
         console.log(res.data);
         this.setState({
-          shows: [...this.state.shows].filter(show => {
-            return show.id !== showId
-          })
-        })
+          shows: [...this.state.shows].filter((show) => {
+            return show.id !== showId;
+          }),
+        });
       });
   };
 
   componentDidMount() {
     const userId = sessionStorage.getItem("userId");
     axios.get(`http://localhost:8080/mylist/${userId}`).then((res) => {
-      this.setState({
-        showIds: res.data,
-      });
-    });
-  }
-
-  componentDidUpdate() {
-    if (this.state.shows.length === 0) {
-      Promise.all(
-        this.state.showIds.map((show) => {
-          return axios
-            .get(`https://api.tvmaze.com/shows/${show.showId}`)
-            .then((res) => {
-              return res.data;
-            });
-        })
-      ).then((res) => {
-        this.setState({
-          shows: res,
+      console.log(res);
+      res.data.map((show) => {
+        axios.get(`https://api.tvmaze.com/shows/${show.showId}`).then((res) => {
+          this.setState({
+            shows: [...this.state.shows, res.data],
+          });
         });
       });
-    }
+    });
   }
 
   render() {
     return (
       <section className="mylist">
         <div className="mylist__addedshow">
+          <h1 className="mylist__title">My List</h1>
           {this.state.shows.map((show) => (
             <AddedTvShow
               premiered={show.premiered}
