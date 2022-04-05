@@ -4,8 +4,15 @@
 @use "../../styles/partials/mixins" as *;
 
 .mylist {
+  padding-top: 6rem;
+  text-align: center;
+
+  @include tablet {
+    padding-top: 10rem;
+  }
+
   &__addedshow {
-    margin: 6rem 0;
+    margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -13,12 +20,13 @@
     justify-content: center;
 
     @include tablet {
-      margin-top: 8rem;
+      margin-top: 3rem;
     }
   }
 
   &__title {
     color: $white;
     font-weight: 600;
+    font-size: 2rem;
   }
 }

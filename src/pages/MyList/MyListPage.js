@@ -40,8 +40,8 @@ class MyList extends Component {
   render() {
     return (
       <section className="mylist">
+        <h1 className="mylist__title">My List</h1>
         <div className="mylist__addedshow">
-          <h1 className="mylist__title">My List</h1>
           {this.state.shows.map((show) => (
             <AddedTvShow
               premiered={show.premiered}

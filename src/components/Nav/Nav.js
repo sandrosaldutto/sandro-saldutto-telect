@@ -5,14 +5,13 @@ import { NavLink, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
 
 function Nav({ onClick, showLogout }) {
-
   const history = useHistory();
 
   const logoutHandler = () => {
-    onClick()
-    history.push("/login") 
+    onClick();
+    history.push("/login");
   };
-  
+
   return (
     <section className="nav">
       <div className="nav__login-logout">
