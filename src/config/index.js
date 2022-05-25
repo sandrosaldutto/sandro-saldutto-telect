@@ -1,4 +1,4 @@
 export const API_URL =
   process.env.NODE_ENV === 'production'
-    ? 'https://telect-app.herokuapp.com'
+    ? 'https://telect-server.herokuapp.com'
     : 'http://localhost:8080';
