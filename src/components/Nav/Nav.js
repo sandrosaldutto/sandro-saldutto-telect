@@ -1,5 +1,6 @@
 import "./Nav.scss";
 import listIcon from "../../assets/icons/list.svg";
+import inactiveListIcon from "../../assets/icons/list-inactive.svg";
 import loginSignupIcon from "../../assets/icons/login-signup.svg";
 import { NavLink, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
@@ -38,10 +39,11 @@ function Nav({ onClick, showLogout }) {
         <div className="nav__logo"></div>
       </Link>
       <NavLink to="/mylist" activeClassName="nav__list-active">
-        {showLogout ? ( <img src={listIcon} alt="My list" className="nav__list"></img>) : (
+        {showLogout ? (
+          <img src={listIcon} alt="My list" className="nav__list"></img>
+        ) : (
           ""
         )}
-        
       </NavLink>
     </section>
   );

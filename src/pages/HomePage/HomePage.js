@@ -4,7 +4,7 @@ import { useDebounce } from "../../hooks/debounce";
 import axios from "axios";
 import TvShow from "../../components/TvShow/TvShow";
 
-function HomePage( { showLogout } ) {
+function HomePage({ showLogout }) {
   // states
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -58,14 +58,14 @@ function HomePage( { showLogout } ) {
         placeholder="Search for Show"
         className="home__searchbar"
       ></input>
+
       {!isLoading && isEmpty && (
-        <p className="home__shows-found">No Tv Shows Found </p>
+        <p className="home__shows-found">Log in to add shows to your list</p>
       )}
       {!isLoading && !isEmpty && (
         <div className="home__show">
           {tvShows.map(({ show }) => (
             <TvShow
-              showLogout={showLogout}
               key={show.id}
               thumbanilSrc={show.image && show.image.medium}
               name={show.name}
