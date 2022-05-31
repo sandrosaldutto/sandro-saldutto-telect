@@ -4,7 +4,7 @@ import { useDebounce } from "../../hooks/debounce";
 import axios from "axios";
 import TvShow from "../../components/TvShow/TvShow";
 
-function HomePage() {
+function HomePage( { showLogout } ) {
   // states
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -65,6 +65,7 @@ function HomePage() {
         <div className="home__show">
           {tvShows.map(({ show }) => (
             <TvShow
+              showLogout={showLogout}
               key={show.id}
               thumbanilSrc={show.image && show.image.medium}
               name={show.name}

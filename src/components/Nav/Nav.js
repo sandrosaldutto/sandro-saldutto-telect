@@ -38,7 +38,10 @@ function Nav({ onClick, showLogout }) {
         <div className="nav__logo"></div>
       </Link>
       <NavLink to="/mylist" activeClassName="nav__list-active">
-        <img src={listIcon} alt="My list" className="nav__list"></img>
+        {showLogout ? ( <img src={listIcon} alt="My list" className="nav__list"></img>) : (
+          ""
+        )}
+        
       </NavLink>
     </section>
   );
