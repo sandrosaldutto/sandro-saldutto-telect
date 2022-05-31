@@ -2,7 +2,7 @@ import "./Switch.scss";
 import { useState } from "react";
 import axios from "axios";
 
-function Switch({ showId }) {
+function Switch({ showId, showLogout }) {
   const [toggle, setToggle] = useState(true);
 
   const toggler = () => {
@@ -22,7 +22,7 @@ function Switch({ showId }) {
 
   return (
     <>
-      <label className="switch">
+    {showLogout ? ( <label className="switch">
         <input
           onClick={toggler}
           onChange={() => {
@@ -32,7 +32,9 @@ function Switch({ showId }) {
           className="switch__input"
         />
         <span className="switch__slider" />
-      </label>
+      </label> )
+      : ( "" 
+      )}
     </>
   );
 }

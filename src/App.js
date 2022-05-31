@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
         <Nav onClick={logoutHandler} showLogout={showLogout} />
         <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={HomePage} showLogout={showLogout} />
         <Route path="/signup" component={SignUp} />
         <Route
           path="/login"
