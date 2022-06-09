@@ -60,7 +60,7 @@ function HomePage({ showLogout }) {
         className="home__searchbar"
       ></input>
 
-      {!isLoading && isEmpty && (
+      {!isLoading && isEmpty && !showLogout && (
         <p className="home__shows-found"><Link to="/login" className="home__login">Login</Link> to add shows to your list</p>
       )}
       {!isLoading && !isEmpty && (
