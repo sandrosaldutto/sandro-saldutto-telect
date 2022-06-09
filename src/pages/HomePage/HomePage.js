@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDebounce } from "../../hooks/debounce";
 import axios from "axios";
 import TvShow from "../../components/TvShow/TvShow";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function HomePage({ showLogout }) {
   // states
@@ -60,7 +61,7 @@ function HomePage({ showLogout }) {
       ></input>
 
       {!isLoading && isEmpty && (
-        <p className="home__shows-found">Log in to add shows to your list</p>
+        <p className="home__shows-found"><Link to="/login" className="home__login">Login</Link> to add shows to your list</p>
       )}
       {!isLoading && !isEmpty && (
         <div className="home__show">
@@ -70,7 +71,6 @@ function HomePage({ showLogout }) {
               thumbanilSrc={show.image && show.image.medium}
               name={show.name}
               showId={show.id}
-              showLogout={showLogout}
             />
           ))}
         </div>

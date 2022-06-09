@@ -42,7 +42,7 @@ function Nav({ onClick, showLogout }) {
         {showLogout ? (
           <img src={listIcon} alt="My list" className="nav__list"></img>
         ) : (
-          ""
+          <div className="nav__list--empty"></div>
         )}
       </NavLink>
     </section>

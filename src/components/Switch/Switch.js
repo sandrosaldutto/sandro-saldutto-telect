@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { API_URL } from "../../config/index"
 
-function Switch({ showId, showLogout }) {
+function Switch({ showId }) {
   const [toggle, setToggle] = useState(true);
 
   const toggler = () => {
@@ -23,8 +23,7 @@ function Switch({ showId, showLogout }) {
 
   return (
     <section>
-      { !showLogout ? (
-        <label className="switch">
+   <label className="switch">
         <input
           onClick={toggler}
           onChange={() => {
@@ -35,8 +34,6 @@ function Switch({ showId, showLogout }) {
         />
         <span className="switch__slider" />
       </label>
-      ) : ("login")}
-   
       </section>
   );
 }
