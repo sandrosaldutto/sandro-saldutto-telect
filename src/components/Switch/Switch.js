@@ -23,7 +23,7 @@ function Switch({ showId, showLogout }) {
 
   return (
     <section>
-      { showLogout ? (
+      { !showLogout ? (
         <label className="switch">
         <input
           onClick={toggler}
