@@ -5,11 +5,14 @@ import axios from "axios";
 import TvShow from "../../components/TvShow/TvShow";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function HomePage({ showLogout }) {
+function HomePage() {
   // states
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [tvShows, setTvShows] = useState([]);
+  const [showLogout, setShowLogout] = useState(
+    sessionStorage.authToken !== undefined
+  );
 
   // if no shows
   const isEmpty = !tvShows || tvShows.length === 0;
@@ -63,7 +66,6 @@ function HomePage({ showLogout }) {
       { !showLogout ? (
         <p className="home__shows-found"><Link to="/login" className="home__login">Login</Link> to add shows to your list</p>
       ) : ("")}
-      
       {!isLoading && !isEmpty && (
         <div className="home__show">
           {tvShows.map(({ show }) => (
