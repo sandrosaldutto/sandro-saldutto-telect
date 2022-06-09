@@ -24,27 +24,35 @@ function Switch({ showId }) {
       });
   };
 
+  const showLabel = () => {
+    return <label className="switch">
+    <input
+      onClick={toggler}
+      onChange={() => {
+        handleToggle(showId);
+      }}
+      type="checkbox"
+      className="switch__input"
+    />
+    <span className="switch__slider" />
+  </label>
+  }
+
+  const showLabelDisable = () => {
+     return <label
+    className="switch"
+  >
+    <input type="checkbox" className="switch__input--disable" />
+    <span className="switch__slider--disable" />
+  </label>
+  }
+
   return (
     <section>
       {showLogout ? (
-        <label className="switch">
-          <input
-            onClick={toggler}
-            onChange={() => {
-              handleToggle(showId);
-            }}
-            type="checkbox"
-            className="switch__input"
-          />
-          <span className="switch__slider" />
-        </label>
+        showLabel()
       ) : (
-        <label
-          className="switch"
-        >
-          <input type="checkbox" className="switch__input--disable" />
-          <span className="switch__slider--disable" />
-        </label>
+       showLabelDisable()
       )}
     </section>
   );
