@@ -70,6 +70,7 @@ function HomePage({ showLogout }) {
               thumbanilSrc={show.image && show.image.medium}
               name={show.name}
               showId={show.id}
+              showLogout={showLogout}
             />
           ))}
         </div>

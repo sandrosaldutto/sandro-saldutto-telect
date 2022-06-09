@@ -22,8 +22,9 @@ function Switch({ showId, showLogout }) {
   };
 
   return (
-    <>
-   <label className="switch">
+    <section>
+      { showLogout ? (
+        <label className="switch">
         <input
           onClick={toggler}
           onChange={() => {
@@ -34,7 +35,9 @@ function Switch({ showId, showLogout }) {
         />
         <span className="switch__slider" />
       </label>
-    </>
+      ) : ("login")}
+   
+      </section>
   );
 }
 

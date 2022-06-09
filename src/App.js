@@ -33,7 +33,7 @@ function App() {
             <Login {...routerProps} showLogoutHandler={showLogoutHandler} />
             )}
             />
-        <Route path="/mylist" component={MyList} />
+        <Route path="/mylist" component={MyList}/>
         </Switch>
       </BrowserRouter>
     </>
