@@ -11,13 +11,10 @@ function Login(props) {
     e.preventDefault();
 
     axios
-      .post(
-        (`${API_URL}/users/login`), {
-              username: e.target.username.value,
-              password: e.target.password.value,
-            }, 
-        { withCredentials: true })
-
+      .post(`${API_URL}/users/login`, {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      })
       .then((res) => {
         let token = res.data.token;
         let userId = res.data.userId;
