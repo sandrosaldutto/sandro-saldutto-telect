@@ -60,9 +60,10 @@ function HomePage({ showLogout }) {
         className="home__searchbar"
       ></input>
 
-      {!isLoading && isEmpty && !showLogout && (
+      { !showLogout ? (
         <p className="home__shows-found"><Link to="/login" className="home__login">Login</Link> to add shows to your list</p>
-      )}
+      ) : ("")}
+      
       {!isLoading && !isEmpty && (
         <div className="home__show">
           {tvShows.map(({ show }) => (
