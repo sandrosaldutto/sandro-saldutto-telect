@@ -39,9 +39,9 @@ function Switch({ showId }) {
       </label>) : ( <label className="switch">
         <input
           type="checkbox"
-          className="switch__input"
+          className="switch__input--disable"
         />
-        <span className="switch__slider" />
+        <span className="switch__slider--disable" />
       </label>)}
   
       </section>
