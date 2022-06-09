@@ -36,7 +36,13 @@ function Switch({ showId }) {
           className="switch__input"
         />
         <span className="switch__slider" />
-      </label>) : ("")}
+      </label>) : ( <label className="switch">
+        <input
+          type="checkbox"
+          className="switch__input"
+        />
+        <span className="switch__slider" />
+      </label>)}
   
       </section>
   );
