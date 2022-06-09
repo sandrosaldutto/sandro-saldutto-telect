@@ -18,7 +18,10 @@ function SignUp(props) {
       })
       .then((res) => {
         props.history.push("/login");
-      });
+      })
+      .catch((res) => {
+        alert("Problem Signing Up")
+      })
   };
 
   return (

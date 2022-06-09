@@ -22,7 +22,10 @@ function Login(props) {
         sessionStorage.setItem("userId", userId);
         props.showLogoutHandler();
         props.history.push("/");
-      });
+      })
+      .catch((res) => {
+        alert("Problem Logging In")
+      })
   };
 
   return (
