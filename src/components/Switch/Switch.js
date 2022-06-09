@@ -36,7 +36,7 @@ function Switch({ showId }) {
           className="switch__input"
         />
         <span className="switch__slider" />
-      </label>) : ("Please Login")}
+      </label>) : ("")}
   
       </section>
   );
